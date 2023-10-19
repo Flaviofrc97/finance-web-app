@@ -18,7 +18,7 @@ def check_loan_inputs(rate, loan, term, carencia):
     if term <= 0:
         errors.append("O prazo do empréstimo deve ser maior que zero.")
     if carencia < 0 or carencia >= term:
-        errors.append("O período de carência não pode ser negativo e nem maior que o prazo.")
+        errors.append("O período de carência não pode ser negativos e nem maior que o prazo.")
 
     return errors
 
