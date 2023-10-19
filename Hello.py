@@ -24,25 +24,22 @@ def run():
         page_icon="👋",
     )
 
-    st.write("# teste: Welcome to Streamlit! 👋")
-
-    st.sidebar.success("Select a demo above.")
+    st.write("# Ola! Bem-vindo! 👋")
 
     st.markdown(
         """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+        Esta é uma calculadora simples de amortização de empréstimos desenvolvida em Python com o uso do Streamlit 
+        para criar uma interface de usuário amigável. A calculadora permite que os usuários insiram informações sobre seu empréstimo, 
+        como taxa de juros, valor do empréstimo, prazo e período de carência, e calcula o valor da amortização (PMT) com base nesses dados 💰.
+    """
+    )
+
+    st.markdown(
+        """
+        Sinta-se à vontade para contribuir para este projeto. Você pode relatar problemas,
+          enviar solicitações de pull ou propor melhorias. Toda ajuda é bem-vinda! 🚀
+
+          [github](https://github.com/Flaviofrc97/finance-web-app)
     """
     )
 
