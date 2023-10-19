@@ -32,7 +32,12 @@ def data_frame_demo():
         
 
         df = calculos.inputs(rate, loan, term, carencia, start_date)
-        st.write("### Inputs selected", df)
+        
+        if isinstance(df, list):
+            for error in df:
+                st.warning(error)
+        else:
+            st.write("### Inputs selected", df)
             
 
     except URLError as e:

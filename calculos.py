@@ -10,15 +10,15 @@ pd.set_option('display.max_columns', None)
 
 def check_loan_inputs(rate, loan, term, carencia):
     errors = []
-    
+
     if rate <= 0:
         errors.append("A taxa de juros deve ser maior que zero.")
     if loan <= 0:
         errors.append("O valor do empréstimo deve ser maior que zero.")
     if term <= 0:
         errors.append("O prazo do empréstimo deve ser maior que zero.")
-    if carencia < 0:
-        errors.append("O período de carência não pode ser negativo.")
+    if carencia < 0 or carencia >= term:
+        errors.append("O período de carência não pode ser negativo e nem maior que o prazo.")
 
     return errors
 
@@ -26,6 +26,12 @@ def check_loan_inputs(rate, loan, term, carencia):
 
 # INPUTS PARA CALCULO DA AMORTIZACAO
 def inputs(rate, loan, term, carencia, start_date):
+            
+            errors = check_loan_inputs(rate, loan, term, carencia)
+
+            if errors: return errors 
+
+
             rate_day = (rate + 1) ** (1 / 30) - 1
 
             if carencia == 0:ajust_loan = loan
