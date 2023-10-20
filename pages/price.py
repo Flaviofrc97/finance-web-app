@@ -38,6 +38,9 @@ def data_frame_demo():
                 st.warning(error)
         else:
             st.write("### Inputs selected", df)
+            df_amort = calculos.amort_by_column(df)
+            df_final = calculos.processar_dataframe(df_amort)
+            st.write("### Curva contrato", df_final)
             
 
     except URLError as e:

@@ -103,7 +103,7 @@ def processar_dataframe(df):
             new_df = new_df.rename(columns={0: column})
             new_df['fk'] = new_df.index
             new_df['fk'] = new_df['fk'].apply(lambda x: x.split('_')[-1]).astype(int)
-            new_df.set_index('fk')
+            new_df = new_df.set_index('fk')
         else:
             df_2 = df.filter(like=prefix).T
             column = df_2.iloc[0].T.name
@@ -111,12 +111,12 @@ def processar_dataframe(df):
             df_2 = df_2.rename(columns={0: column})
             df_2['fk'] = df_2.index
             df_2['fk'] = df_2['fk'].apply(lambda x: x.split('_')[-1]).astype(int)
-            df_2.set_index('fk')
+            df_2 = df_2.set_index('fk')
 
-            new_df[column] = df_2[[column]].values
+            new_df[column] = df_2[column].values
 
-    ordem_desejada = ['fk', 'startDate', 'pagtoDate', 'prestacao', 'amortizacao', 'juros', 'EA']
-    new_df = new_df[ordem_desejada]
-    new_df = new_df.set_index('fk')
+    # ordem_desejada = ['fk', 'startDate', 'pagtoDate', 'prestacao', 'amortizacao', 'juros', 'EA']
+    # new_df = new_df[ordem_desejada]
+    # new_df = new_df.set_index('fk')
 
     return new_df
