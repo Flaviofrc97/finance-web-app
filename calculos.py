@@ -115,8 +115,7 @@ def processar_dataframe(df):
 
             new_df[column] = df_2[column].values
 
-    # ordem_desejada = ['fk', 'startDate', 'pagtoDate', 'prestacao', 'amortizacao', 'juros', 'EA']
-    # new_df = new_df[ordem_desejada]
-    # new_df = new_df.set_index('fk')
+    ordem_desejada = ['startDate', 'pagtoDate', 'prestacao', 'amortizacao', 'juros', 'EA']
+    new_df = new_df[ordem_desejada]
 
     return new_df

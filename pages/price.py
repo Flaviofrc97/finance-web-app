@@ -40,8 +40,16 @@ def data_frame_demo():
             st.write("### Inputs selected", df)
             df_amort = calculos.amort_by_column(df)
             df_final = calculos.processar_dataframe(df_amort)
-            st.write("### Curva contrato", df_final)
+            st.dataframe(df_final)
+
             
+            csv_data = df_final.to_csv(index=False)
+            st.download_button(
+                    label="Clique aqui para baixar o CSV",
+                    data=csv_data,
+                    file_name="data.csv",
+                key="download-csv",
+                                )
 
     except URLError as e:
         st.error(
