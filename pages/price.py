@@ -17,7 +17,7 @@ def data_frame_demo():
         cols = st.columns(5)
         # intial inputs to calculate
         with cols[0]:
-            rate = st.number_input("Intereste rate", value=0.0185993143, placeholder="type a rate...", format="%.3f")
+            rate = st.number_input("Intereste rate", value=0.0185993143, placeholder="type a rate...", format="%.6f")
         with cols[1]:
             loan = st.number_input("Loan value", value=93868.71, placeholder="Type loan value...")
         with cols[2]:
