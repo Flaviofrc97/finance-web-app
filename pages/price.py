@@ -17,13 +17,13 @@ def data_frame_demo():
         cols = st.columns(5)
         # intial inputs to calculate
         with cols[0]:
-            rate = st.number_input("Intereste rate", value=0.0185993143, placeholder="type a rate...")
+            rate = st.number_input("Intereste rate", value=0.0185993143, placeholder="type a rate...", format="%.3f")
         with cols[1]:
-            loan = st.number_input("loan value", value=93868.71, placeholder="Type a number...")
+            loan = st.number_input("Loan value", value=93868.71, placeholder="Type loan value...")
         with cols[2]:
-            term = st.number_input("term", value=60, placeholder="Type a number...", min_value=0)
+            term = st.number_input("Term", value=60, placeholder="Type term...", min_value=0)
         with cols[3]:
-            carencia = st.number_input("carencia", value=0, placeholder="Type a number...")
+            grace = st.number_input("Grace Period", value=0, placeholder="Type grace period...")
         with cols[4]:
             start_date = st.date_input("Select a start date", datetime(2023, 6, 1))
 
@@ -31,7 +31,7 @@ def data_frame_demo():
     
         
 
-        df = calculos.inputs(rate, loan, term, carencia, start_date)
+        df = calculos.inputs(rate, loan, term, grace, start_date)
         
         if isinstance(df, list):
             for error in df:
