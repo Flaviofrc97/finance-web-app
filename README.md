@@ -23,3 +23,4 @@ streamlit run app.py
 
 O aplicativo será iniciado no navegador e você poderá usar a calculadora de amortização de empréstimos.
 
+![foto](https://github.com/Flaviofrc97/finance-web-app/assets/58704545/8a480b4c-e984-472a-b1e7-9d9174f7e3b2)
