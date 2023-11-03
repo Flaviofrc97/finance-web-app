@@ -24,9 +24,9 @@ def data_frame_demo():
             term = st.number_input("Term", value=60, placeholder="Type term...", min_value=0)
         with cols[3]:
             grace = st.number_input("Grace Period", value=0, placeholder="Type grace period...")
-            if grace > 0:
-                    options = ['sim', 'nao']
-                    select_op = st.selectbox('havera pagamento de juros', options)
+            # if grace > 0:
+            #         options = ['sim', 'nao']
+            #         select_op = st.selectbox('havera pagamento de juros', options)
 
         with cols[4]:
             start_date = st.date_input("Select a start date", datetime(2023, 6, 1))
